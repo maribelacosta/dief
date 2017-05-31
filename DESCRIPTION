@@ -1,0 +1,10 @@
+Package: dief
+Type: Package
+Title: Library for computing diefficiency metrics
+Version: 1.0
+Date: 2017-05-18
+Author: Maribel Acosta
+Maintainer: Maribel Acosta <maribel.acosta@kit.edu>
+Description: Library to compute the metrics dief@t and dief@k from answer traces of incremental approaches.   
+License: CC BY 4.0 
+RoxygenNote: 6.0.1
