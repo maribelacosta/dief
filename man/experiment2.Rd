@@ -4,7 +4,7 @@
 \alias{experiment2}
 \title{experiment2}
 \usage{
-experiment2()
+experiment2(tracespath)
 }
 \description{
 This function reproduces the results reported in Experiment 2.

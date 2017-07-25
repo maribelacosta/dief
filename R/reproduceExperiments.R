@@ -3,16 +3,18 @@
 #' experiment1
 #'
 #' This function reproduces the results reported in Experiment 1.
+#' @param traces_file CSV file with the result of the traces. The structure of this file is as follows: "query,approach,tuple,time".
+#' @param metrics_file CSV file with the result of the other metrics. The structure of this file is as follows: "query,approach,tfft,totaltime,comp".
 #' @keywords dieft, diefficiency
 #' @author Maribel Acosta
 #' @export experiment1
 #' @seealso experiment2, dieft
 #' 
-experiment1 <- function() {
+experiment1 <- function(traces_file, metrics_file) {
   
   # Input data: Outcome of query execution.
-  traces <- read.csv("data/nLDE-Benchmark1-AnswerTrace.csv")
-  metrics <- read.csv("data/nLDE-Benchmark1-Metrics.csv")
+  traces <- read.csv(traces_file)
+  metrics <- read.csv(metrics_file) 
   
   # Compute further metrics: throughput, inverse of execution time, inverse of time for the first tuple.
   metrics$throughput <- with(metrics, metrics$comp/metrics$totaltime)
@@ -28,6 +30,8 @@ experiment1 <- function() {
     print(c("Computing dieft for all approaches for query ", q))
     dieftDF <- rbind(dieftDF, dieft(traces, q))
   }
+  
+  print(dieftDF)
   
   # Merge conventional metrics and dieft into a single dataframe.
   allmetrics <- merge(metrics, dieftDF)
@@ -45,10 +49,10 @@ experiment1 <- function() {
 #' @export experiment2
 #' @seealso experiment1, diefk2
 #'
-experiment2 <- function() {
+experiment2 <- function(tracespath) {
   
   # Input data: Outcome of query execution.
-  traces <- read.csv("data/nLDE-Benchmark1-AnswerTrace.csv")
+  traces <- read.csv(tracespath)
   
   # Obtain queries.
   queries <- unique(traces$query)
