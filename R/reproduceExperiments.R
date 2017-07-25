@@ -44,6 +44,7 @@ experiment1 <- function(traces_file, metrics_file) {
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @import fmsb
+#' @import ggplot2
 #' @export plotExperiment1
 #' @seealso experiment1, diefk2
 #'
