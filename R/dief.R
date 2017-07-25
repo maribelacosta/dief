@@ -145,6 +145,17 @@ plotAnswerTrace <- function(inputtrace, inputquery) {
   resplot <- resplot + geom_point(aes(colour=approach), size=3)
   resplot <- resplot + ggtitle(inputquery)
   resplot <- resplot + xlab('Time') +  ylab('# Answers Produced')
+  resplot <- resplot + theme(
+    legend.justification=c(0,1), legend.position=c(0,1),
+    legend.text = element_text(size = 16),
+    legend.title=element_blank(),
+    legend.background = element_rect(fill = 'transparent',  colour = "transparent"),
+    axis.text = element_text(colour = "black", size=14),
+    axis.title = element_text(colour = "black", size=12),
+    panel.background = element_rect(fill = 'white', colour = 'gray'),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_line(colour = "#eaeaea"),
+    panel.grid.major.y = element_blank())
   print(resplot)
   
 }
