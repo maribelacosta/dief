@@ -66,7 +66,7 @@ plotExperiment1 <- function(allmetrics) {
     data <- rbind(maxs, mins ,data)
     
     colors_border=c("#2274A5","#F75C03","#4CB944")
-    colors_in=add.alpha(colors_border, 0.15)
+    colors_in=alpha(colors_border, 0.15)
     
     radarchart( data, 
                 pcol=colors_border , pfcol=colors_in, plwd=4 , plty=1,
