@@ -31,14 +31,52 @@ experiment1 <- function(traces_file, metrics_file) {
     dieftDF <- rbind(dieftDF, dieft(traces, q))
   }
   
-  print(dieftDF)
-  
   # Merge conventional metrics and dieft into a single dataframe.
   allmetrics <- merge(metrics, dieftDF)
+  
   
   return(allmetrics)
 }
 
+#' plotExperiment1
+#'
+#' This function plots the results reported in Experiment 1.
+#' @keywords diefk, diefficiency
+#' @author Maribel Acosta
+#' @import GISTools
+#' @export plotExperiment1
+#' @seealso experiment1, diefk2
+#'
+plotExperiment1 <- function(allmetrics) {
+  
+  # Obtain queries.
+  queries <- unique(allmetrics$query)
+  
+  # Plot metrics using spider plot. 
+  keeps <- c("invtfft", "invtotaltime", "comp", "throughput", "dieft")
+  for (q in queries) {
+    
+    data <- subset(allmetrics, query==q) 
+    data <- data[keeps]
+    
+    maxs <- data.frame(invtfft=max(data$invtfft), invtotaltime=max(data$invtotaltime), comp=max(data$comp), throughput=max(data$throughput), dieft=max(data$dieft))
+    mins <- data.frame(invtfft=0, invtotaltime=0, comp=0, throughput=0, dieft=0)
+    
+    data <- rbind(maxs, mins ,data)
+    
+    colors_border=c("#2274A5","#F75C03","#4CB944")
+    colors_in=add.alpha(colors_border, 0.15)
+    
+    radarchart( data, 
+                pcol=colors_border , pfcol=colors_in, plwd=4 , plty=1,
+                cglcol="grey", cglty=1, axislabcol="grey", cglwd=1.0,
+                vlcex=1.5,
+                title=q,
+                vlabels=c("(TFFF)^-1", "(ET)^-1", "Comp", "T", "dief@t"))
+    
+    legend(x=0.7, y=1, legend = c("NA", "Ran", "Sel"), bty = "n", pch=20 , col=colors_border , text.col = "black", cex=1.7, pt.cex=3)  
+  }
+}  
 
 #' experiment2
 #'
