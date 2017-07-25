@@ -43,7 +43,7 @@ experiment1 <- function(traces_file, metrics_file) {
 #' This function plots the results reported in Experiment 1.
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
-#' @import GISTools
+#' @import fmsb
 #' @export plotExperiment1
 #' @seealso experiment1, diefk2
 #'
