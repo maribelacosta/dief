@@ -154,8 +154,8 @@ plotAnswerTrace <- function(inputtrace, inputquery) {
     axis.title = element_text(colour = "black", size=12),
     panel.background = element_rect(fill = 'white', colour = 'gray'),
     panel.grid.minor = element_blank(),
-    panel.grid.major.y = element_line(colour = "#eaeaea"),
     panel.grid.major.y = element_blank())
+  
   print(resplot)
   
 }
