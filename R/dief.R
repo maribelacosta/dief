@@ -31,6 +31,10 @@ dieft <- function(inputtrace, inputquery, t=-1) {
   # Compute dieft per approach.
   for (a in approaches) {
     subtrace <- subset(results, approach==a & time<=t)  
+    subtrace <- subtrace[, c("time", "tuple") ]
+    com <- data.frame(t, nrow(subtrace))
+    names(com) <- c("time", "tuple")
+    subtrace <- rbind(subtrace, com)
     dieft <- 0
     if (nrow(subtrace) > 1) {
       dieft <- flux::auc(subtrace$time, subtrace$tuple)
