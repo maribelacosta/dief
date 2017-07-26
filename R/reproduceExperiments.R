@@ -41,12 +41,10 @@ experiment1 <- function(traces_file, metrics_file) {
 #' plotExperiment1Query
 #'
 #' This function plots the results reported in Experiment 1 for a single given query.
-#' @keywords diefk, diefficiency
+#' @keywords dieft, diefficiency
 #' @author Maribel Acosta
-#' @param  allmetrics dataframe with the result of all the metrics in Experiment 1. 
+#' @param  allmetrics dataframe with the results of all the metrics in Experiment 1. 
 #' @param  query the selected query to plot. 
-#' @import fmsb
-#' @import ggplot2
 #' @export plotExperiment1Query
 #' @seealso experiment1, plotExperiment1
 #'
@@ -144,4 +142,61 @@ experiment2 <- function(tracespath) {
   return(diefkDF)
   
 }
+
+#' plotExperiment2Query
+#'
+#' This function plots the results reported in Experiment 2 for a single given query.
+#' @keywords diefk, diefficiency
+#' @author Maribel Acosta
+#' @param  diefkDF dataframe resulting from Experiment 2.
+#' @param  query the selected query to plot. 
+#' @import fmsb
+#' @import ggplot2
+#' @export plotExperiment2Query
+#' @seealso experiment2, plotExperiment2
+#'
+plotExperiment2Query <- function(diefkDF, q) {
+  
+  # Plot metrics using spider plot.
+  keeps <- c("diefk25", "diefk50", "diefk75", "diefk100")
+  
+  x <- subset(diefkDF, query==q)
+  x <- x[keeps]
+  
+  maxs <- data.frame(diefk25=max(x$diefk25), diefk50=max(x$diefk50), diefk75=max(x$diefk75), diefk100=max(x$diefk100))
+  mins <- data.frame(diefk25=0, diefk50=0,  diefk75=0, diefk100=0)
+  
+  data <- rbind(mins, maxs, x)
+  
+  colors_border=c("#ECC30B","#D56062","#84BCDA")
+  colors_in=alpha(colors_border, 0.15)
+  radarchart( data, 
+              pcol=colors_border , pfcol=colors_in, plwd=4 , plty=1,
+              cglcol="grey", cglty=1, axislabcol="grey", cglwd=1.0,
+              vlcex=1.5,
+              title=q,
+              vlabels=c("k=25%", "k=50%", "k=75%", "k=100%"))
+  legend(x=0.7, y=1.3, legend = c("NA", "Ran", "Sel"), bty = "n", pch=20 , col=colors_border , text.col = "black", cex=1.3, pt.cex=2.5)
+
+}
+
+#' plotExperiment2
+#'
+#' This function plots the results reported in Experiment 2.
+#' @keywords diefk, diefficiency
+#' @author Maribel Acosta
+#' @param  diefkDF dataframe with the results of Experiment 2. 
+#' @export plotExperiment2
+#' @seealso experiment2, diefk2
+#'
+plotExperiment2 <- function(diefkDF) {
+  
+  # Obtain queries.
+  queries <- unique(diefkDF$query)
+  
+  # Plot the metrics for each query in Experiment 12.  
+  for (q in queries) {
+    plotExperiment2Query(diefkDF, q)  
+  }
+}  
 

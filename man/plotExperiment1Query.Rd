@@ -7,7 +7,7 @@
 plotExperiment1Query(allmetrics, q)
 }
 \arguments{
-\item{allmetrics}{dataframe with the result of all the metrics in Experiment 1.}
+\item{allmetrics}{dataframe with the results of all the metrics in Experiment 1.}
 
 \item{query}{the selected query to plot.}
 }
@@ -21,4 +21,4 @@ experiment1, plotExperiment1
 Maribel Acosta
 }
 \keyword{diefficiency}
-\keyword{diefk,}
+\keyword{dieft,}
