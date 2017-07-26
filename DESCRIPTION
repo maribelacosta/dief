@@ -7,4 +7,5 @@ Author: Maribel Acosta
 Maintainer: Maribel Acosta <maribel.acosta@kit.edu>
 Description: Library to compute the metrics dief@t and dief@k from answer traces of incremental approaches.   
 License: CC BY 4.0 
+Imports: flux, fmsb, ggplot2, plyr
 RoxygenNote: 6.0.1

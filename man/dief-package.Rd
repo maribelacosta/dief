@@ -34,10 +34,3 @@ Maribel Acosta, Maria-Esther Vidal, York Sure-Vetter. Diefficiency Metrics: Meas
 %~~ Optional links to other man pages, e.g. ~~
 %~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 %}
-\examples{
-  # Example to compute dief@t (with t=1.05) for "Q2.sparql" from the trace provided in "data/".
-  
-  traces <- read.csv("data/nLDE-Benchmark1-AnswerTrace.csv")
-  dieft(traces, "Q2.sparql", 1.05)
-  
-}
