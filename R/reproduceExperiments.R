@@ -73,7 +73,7 @@ plotExperiment1Query <- function(allmetrics, q) {
               title=q,
               vlabels=c("(TFFF)^-1", "(ET)^-1", "Comp", "T", "dief@t"))
   
-  legend(x=0.7, y=1, legend = c("NA", "Ran", "Sel"), bty = "n", pch=20 , col=colors_border , text.col = "black", cex=1.7, pt.cex=3)  
+  legend(x=0.7, y=1.3, legend = c("NA", "Ran", "Sel"), bty = "n", pch=20 , col=colors_border , text.col = "black", cex=1.3, pt.cex=2.5)  
   
 }
 
