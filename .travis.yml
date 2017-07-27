@@ -1,0 +1,7 @@
+language: r
+
+os:
+  - linux
+  - osx
+  
+sudo: false
