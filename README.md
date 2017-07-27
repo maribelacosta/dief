@@ -1,4 +1,6 @@
 # dief
+[![Build Status](https://travis-ci.org/maribelacosta/dief.svg?branch=master)](https://travis-ci.org/maribelacosta/dief)
+
 
 R package for computing diefficiency metrics dief@t and dief@k.
 
