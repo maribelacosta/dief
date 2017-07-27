@@ -10,7 +10,7 @@ install.packages("devtools")
 # Install the dief package.
 devtools::install_github("maribelacosta/dief")
 ```
-## Other Links
+## Examples and Other Resources
 Learn step by step to use the `dief` R package with Jupyter Notebooks.
 - Introduction to the `dief` package: https://github.com/maribelacosta/dief-notebooks/blob/master/Dief-Intro.ipynb
 
