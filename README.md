@@ -11,11 +11,11 @@ install.packages("devtools")
 devtools::install_github("maribelacosta/dief")
 ```
 ## Other Links
-Learn step by step how to use the dief package with Jupyter Notebooks.
-- Introduction to the dief package: https://github.com/maribelacosta/dief-notebooks/blob/master/Dief-Intro.ipynb
+Learn step by step to use the `dief` R package with Jupyter Notebooks.
+- Introduction to the `dief` package: https://github.com/maribelacosta/dief-notebooks/blob/master/Dief-Intro.ipynb
 
-Check the dief-app Shiny app.  
- - Visualize the dief-app at: https://maribelacosta.shinyapps.io/dief-app/
+Check the `dief-app` Shiny app.  
+ - Visualize the `dief-app` at: https://maribelacosta.shinyapps.io/dief-app/
 
 ## License 
 This package is licensed under CC BY 4.0.
