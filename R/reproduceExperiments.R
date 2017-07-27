@@ -44,7 +44,7 @@ experiment1 <- function(traces_file, metrics_file) {
 #' @keywords dieft, diefficiency
 #' @author Maribel Acosta
 #' @param  allmetrics dataframe with the results of all the metrics in Experiment 1. 
-#' @param  query the selected query to plot. 
+#' @param  q the id of the selected query to plot. 
 #' @export plotExperiment1Query
 #' @seealso experiment1, plotExperiment1
 #'
@@ -78,9 +78,9 @@ plotExperiment1Query <- function(allmetrics, q) {
 #' plotExperiment1
 #'
 #' This function plots the results reported in Experiment 1.
+#' @param  allmetrics dataframe with the result of all the metrics in Experiment 1. 
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
-#' @param  allmetrics dataframe with the result of all the metrics in Experiment 1. 
 #' @import fmsb
 #' @import ggplot2
 #' @export plotExperiment1
@@ -100,16 +100,17 @@ plotExperiment1 <- function(allmetrics) {
 #' experiment2
 #'
 #' This function reproduces the results reported in Experiment 2.
+#' @param traces_file CSV file with the result of the traces. The structure of this file is as follows: "query,approach,tuple,time".
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @import plyr
 #' @export experiment2
 #' @seealso experiment1, diefk2
 #'
-experiment2 <- function(tracespath) {
+experiment2 <- function(traces_file) {
   
   # Input data: Outcome of query execution.
-  traces <- read.csv(tracespath)
+  traces <- read.csv(traces_file)
   
   # Obtain queries.
   queries <- unique(traces$query)
@@ -149,7 +150,7 @@ experiment2 <- function(tracespath) {
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @param  diefkDF dataframe resulting from Experiment 2.
-#' @param  query the selected query to plot. 
+#' @param  q the id of the selected query to plot. 
 #' @import fmsb
 #' @import ggplot2
 #' @export plotExperiment2Query

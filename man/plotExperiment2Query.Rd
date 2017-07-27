@@ -9,7 +9,7 @@ plotExperiment2Query(diefkDF, q)
 \arguments{
 \item{diefkDF}{dataframe resulting from Experiment 2.}
 
-\item{query}{the selected query to plot.}
+\item{q}{the id of the selected query to plot.}
 }
 \description{
 This function plots the results reported in Experiment 2 for a single given query.

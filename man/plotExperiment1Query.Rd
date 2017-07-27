@@ -9,7 +9,7 @@ plotExperiment1Query(allmetrics, q)
 \arguments{
 \item{allmetrics}{dataframe with the results of all the metrics in Experiment 1.}
 
-\item{query}{the selected query to plot.}
+\item{q}{the id of the selected query to plot.}
 }
 \description{
 This function plots the results reported in Experiment 1 for a single given query.

@@ -4,7 +4,10 @@
 \alias{experiment2}
 \title{experiment2}
 \usage{
-experiment2(tracespath)
+experiment2(traces_file)
+}
+\arguments{
+\item{traces_file}{CSV file with the result of the traces. The structure of this file is as follows: "query,approach,tuple,time".}
 }
 \description{
 This function reproduces the results reported in Experiment 2.

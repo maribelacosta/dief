@@ -30,7 +30,4 @@ Maribel Acosta, Maria-Esther Vidal, York Sure-Vetter. Diefficiency Metrics: Meas
 }
 
 \keyword{ package }
-%\seealso{
-%~~ Optional links to other man pages, e.g. ~~
-%~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-%}
+
