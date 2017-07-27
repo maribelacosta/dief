@@ -3,7 +3,7 @@
 R package for computing diefficiency metrics dief@t and dief@k.
 
 ## Download and Install
-To download the development version of the dief package directly from GitHub, type the following at the R command line:
+To download the development version of the `dief` package directly from GitHub, type the following at the R command line:
 ```r
 # If you have not installed the "devtools" package.
 install.packages("devtools")
