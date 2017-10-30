@@ -14,7 +14,7 @@ devtools::install_github("maribelacosta/dief")
 ```
 ## Examples 
 ```r
-library("dief)
+library("dief")
 
 # Load answer traces: Compare three approaches "Selective", "Not Adaptive", "Random" when executing the test "Q9.sparql".
 traces <- read.csv("data/example.csv")
