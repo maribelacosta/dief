@@ -4,12 +4,12 @@
 \alias{diefk}
 \title{diefk}
 \usage{
-diefk(inputtrace, inputquery, k = -1)
+diefk(inputtrace, inputtest, k = -1)
 }
 \arguments{
-\item{inputtrace}{Dataframe with the answer trace. Attributes of the dataframe: query, approach, tuple, time.}
+\item{inputtrace}{Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.}
 
-\item{inputquery}{String that specifies the specific query to analyze from the answer trace.}
+\item{inputtest}{String that specifies the specific test to analyze from the answer trace.}
 
 \item{k}{to compute diefk. By default, the function computes the minimum of the total number of answers produced by the approaches.}
 }

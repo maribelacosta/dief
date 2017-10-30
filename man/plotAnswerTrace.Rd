@@ -4,15 +4,15 @@
 \alias{plotAnswerTrace}
 \title{plotAnswerTrace}
 \usage{
-plotAnswerTrace(inputtrace, inputquery)
+plotAnswerTrace(inputtrace, inputtest)
 }
 \arguments{
-\item{inputtrace}{Dataframe with the answer trace. Attributes of the dataframe: query, approach, tuple, time.}
+\item{inputtrace}{Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.}
 
-\item{inputquery}{String that specifies the specific query to analyze from the answer trace.}
+\item{inputtest}{String that specifies the specific test to analyze from the answer trace.}
 }
 \description{
-This function plots the answer trace of a given query.
+This function plots the answer trace of a given test.
 }
 \seealso{
 diefk, dieft

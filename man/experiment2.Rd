@@ -7,7 +7,7 @@
 experiment2(traces_file)
 }
 \arguments{
-\item{traces_file}{CSV file with the result of the traces. The structure of this file is as follows: "query,approach,tuple,time".}
+\item{traces_file}{CSV file with the result of the traces. The structure of this file is as follows: "test,approach,tuple,time".}
 }
 \description{
 This function reproduces the results reported in Experiment 2.

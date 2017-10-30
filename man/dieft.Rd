@@ -4,12 +4,12 @@
 \alias{dieft}
 \title{dieft}
 \usage{
-dieft(inputtrace, inputquery, t = -1)
+dieft(inputtrace, inputtest, t = -1)
 }
 \arguments{
-\item{inputtrace}{Dataframe with the answer trace. Attributes of the dataframe: query, approach, tuple, time.}
+\item{inputtrace}{Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.}
 
-\item{inputquery}{String that specifies the specific query to analyze from the answer trace.}
+\item{inputtest}{String that specifies the specific test to analyze from the answer trace.}
 
 \item{t}{to compute dieft. By default, the function computes the minimum of the execution time among the approaches in the answer trace.}
 }

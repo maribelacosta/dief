@@ -3,8 +3,8 @@
 #' experiment1
 #'
 #' This function reproduces the results reported in Experiment 1.
-#' @param traces_file CSV file with the result of the traces. The structure of this file is as follows: "query,approach,tuple,time".
-#' @param metrics_file CSV file with the result of the other metrics. The structure of this file is as follows: "query,approach,tfft,totaltime,comp".
+#' @param traces_file CSV file with the result of the traces. The structure of this file is as follows: "test,approach,tuple,time".
+#' @param metrics_file CSV file with the result of the other metrics. The structure of this file is as follows: "test,approach,tfft,totaltime,comp".
 #' @keywords dieft, diefficiency
 #' @author Maribel Acosta
 #' @export experiment1
@@ -12,7 +12,7 @@
 #' 
 experiment1 <- function(traces_file, metrics_file) {
   
-  # Input data: Outcome of query execution.
+  # Input data: Outcome of test execution.
   traces <- read.csv(traces_file)
   metrics <- read.csv(metrics_file) 
   
@@ -22,12 +22,12 @@ experiment1 <- function(traces_file, metrics_file) {
   metrics$invtotaltime <- with(metrics, 1/metrics$totaltime)
   
   # Obtain queries.
-  queries <- unique(traces$query)
+  queries <- unique(traces$test)
   
   # Compute dieft.
-  dieftDF <- data.frame(query=character(), approach=character(), dieft=double(), stringsAsFactors=TRUE)
+  dieftDF <- data.frame(test=character(), approach=character(), dieft=double(), stringsAsFactors=TRUE)
   for (q in queries) {
-    print(c("Computing dieft for all approaches for query ", q))
+    print(c("Computing dieft for all approaches for test ", q))
     dieftDF <- rbind(dieftDF, dieft(traces, q))
   }
   
@@ -38,22 +38,22 @@ experiment1 <- function(traces_file, metrics_file) {
   return(allmetrics)
 }
 
-#' plotExperiment1Query
+#' plotExperiment1Test
 #'
-#' This function plots the results reported in Experiment 1 for a single given query.
+#' This function plots the results reported in Experiment 1 for a single given test.
 #' @keywords dieft, diefficiency
 #' @author Maribel Acosta
 #' @param  allmetrics dataframe with the results of all the metrics in Experiment 1. 
-#' @param  q the id of the selected query to plot. 
-#' @export plotExperiment1Query
+#' @param  q the id of the selected test to plot. 
+#' @export plotExperiment1Test
 #' @seealso experiment1, plotExperiment1
 #'
-plotExperiment1Query <- function(allmetrics, q) {
+plotExperiment1Test <- function(allmetrics, q) {
   
   # Plot metrics using spider plot. 
   keeps <- c("invtfft", "invtotaltime", "comp", "throughput", "dieft") 
   
-  data <- subset(allmetrics, query==q) 
+  data <- subset(allmetrics, test==q) 
   data <- data[keeps]
   
   maxs <- data.frame(invtfft=max(data$invtfft), invtotaltime=max(data$invtotaltime), comp=max(data$comp), throughput=max(data$throughput), dieft=max(data$dieft))
@@ -89,18 +89,18 @@ plotExperiment1Query <- function(allmetrics, q) {
 plotExperiment1 <- function(allmetrics) {
   
   # Obtain queries.
-  queries <- unique(allmetrics$query)
+  queries <- unique(allmetrics$test)
   
-  # Plot the metrics for each query in Experiment 1.  
+  # Plot the metrics for each test in Experiment 1.  
   for (q in queries) {
-    plotExperiment1Query(allmetrics, q)  
+    plotExperiment1Test(allmetrics, q)  
   }
 }  
 
 #' experiment2
 #'
 #' This function reproduces the results reported in Experiment 2.
-#' @param traces_file CSV file with the result of the traces. The structure of this file is as follows: "query,approach,tuple,time".
+#' @param traces_file CSV file with the result of the traces. The structure of this file is as follows: "test,approach,tuple,time".
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @import plyr
@@ -109,18 +109,18 @@ plotExperiment1 <- function(allmetrics) {
 #'
 experiment2 <- function(traces_file) {
   
-  # Input data: Outcome of query execution.
+  # Input data: Outcome of test execution.
   traces <- read.csv(traces_file)
   
   # Obtain queries.
-  queries <- unique(traces$query)
+  queries <- unique(traces$test)
   
   # Compute diefk for different k%: 25, 50, 75, 100.
-  diefkDF <- data.frame(query=character(), approach=character(), "diefk25"=double(), "diefk50"=double(), "diefk75"=double(), "diefk100"=double())
+  diefkDF <- data.frame(test=character(), approach=character(), "diefk25"=double(), "diefk50"=double(), "diefk75"=double(), "diefk100"=double())
   keeps <- c("diefk25", "diefk50", "diefk75", "diefk100")
   for (q in queries) {
      
-      print(c("Computing diefk for all approaches for query ", q))
+      print(c("Computing diefk for all approaches for test ", q))
       
       k25DF <- diefk2(traces, q, 0.25)
       k25DF <- plyr::rename(k25DF, c("diefk"="diefk25"))
@@ -144,24 +144,24 @@ experiment2 <- function(traces_file) {
   
 }
 
-#' plotExperiment2Query
+#' plotExperiment2Test
 #'
-#' This function plots the results reported in Experiment 2 for a single given query.
+#' This function plots the results reported in Experiment 2 for a single given test.
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @param  diefkDF dataframe resulting from Experiment 2.
-#' @param  q the id of the selected query to plot. 
+#' @param  q the id of the selected test to plot. 
 #' @import fmsb
 #' @import ggplot2
-#' @export plotExperiment2Query
+#' @export plotExperiment2Test
 #' @seealso experiment2, plotExperiment2
 #'
-plotExperiment2Query <- function(diefkDF, q) {
+plotExperiment2Test <- function(diefkDF, q) {
   
   # Plot metrics using spider plot.
   keeps <- c("diefk25", "diefk50", "diefk75", "diefk100")
   
-  x <- subset(diefkDF, query==q)
+  x <- subset(diefkDF, test==q)
   x <- x[keeps]
   
   maxs <- data.frame(diefk25=max(x$diefk25), diefk50=max(x$diefk50), diefk75=max(x$diefk75), diefk100=max(x$diefk100))
@@ -193,11 +193,11 @@ plotExperiment2Query <- function(diefkDF, q) {
 plotExperiment2 <- function(diefkDF) {
   
   # Obtain queries.
-  queries <- unique(diefkDF$query)
+  queries <- unique(diefkDF$test)
   
-  # Plot the metrics for each query in Experiment 12.  
+  # Plot the metrics for each test in Experiment 12.  
   for (q in queries) {
-    plotExperiment2Query(diefkDF, q)  
+    plotExperiment2Test(diefkDF, q)  
   }
 }  
 
