@@ -17,8 +17,8 @@ devtools::install_github("maribelacosta/dief")
 ```r
 library("dief")
 
-# Load answer traces: Compare three approaches "Selective", "Not Adaptive", "Random" when executing the test "Q9.sparql".
-traces <- read.csv("data/example.csv")
+# Use answer traces provided in the package: Compare three approaches "Selective", "Not Adaptive", "Random" when executing the test "Q9.sparql".
+traces
 	
 # Plot answer traces for test "Q9.sparql".
 plotAnswerTrace(traces, "Q9.sparql")
@@ -45,6 +45,7 @@ This package is licensed under CC BY 4.0.
 If you are using the `dief` package to compute dief@t or dief@k, please cite the `dief` package using the citation generated with the R built-in command `citation("dief")` as follows:
 
 ```r
+library("dief")
 citation("dief")
 ```
 
