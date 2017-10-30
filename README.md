@@ -1,5 +1,6 @@
 # dief
 [![Build Status](https://travis-ci.org/maribelacosta/dief.svg?branch=master)](https://travis-ci.org/maribelacosta/dief)
+[![DOI](https://zenodo.org/badge/91789211.svg)](https://zenodo.org/badge/latestdoi/91789211)
 
 
 R package for computing diefficiency metrics dief@t and dief@k.
