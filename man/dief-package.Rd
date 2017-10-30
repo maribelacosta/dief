@@ -20,9 +20,10 @@ License: \tab CC BY 4.0\cr
 }
 
 \examples{
-	# Answer traces: three approaches "Selective", "Not Adaptive", "Random" 
-	# are compared when executing the test "Q9.sparql"
-	traces <- read.csv("data/example.csv")
+	# This example uses the answer traces provided in the package.  
+	# These traces record the answers produced by three approaches "Selective", 
+	# "Not Adaptive", "Random"  when executing the test "Q9.sparql"
+	data(traces)
 	
 	# Plot answer traces for test "Q9.sparql"
 	plotAnswerTrace(traces, "Q9.sparql")

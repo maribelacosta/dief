@@ -12,6 +12,8 @@
 dieft <- function(inputtrace, inputtest, t=-1) {
   
   # Initialize output structure.
+  test <- NULL
+  approach <- NULL
   df <- data.frame(test=character(), approach=character(), dieft=double(), stringsAsFactors=TRUE)
   
   # Obtain test and approaches to compare.
@@ -60,6 +62,9 @@ dieft <- function(inputtrace, inputtest, t=-1) {
 diefk <- function(inputtrace, inputtest, k=-1) {
   
   # Initialize output structure.
+  test <- NULL
+  approach <- NULL
+  answer <- NULL
   df <- data.frame(test=character(), approach=character(), diefk=double(), stringsAsFactors=TRUE)
   
   # Obtain test and approaches to compare.
@@ -104,6 +109,8 @@ diefk <- function(inputtrace, inputtest, k=-1) {
 diefk2 <- function(inputtrace, inputtest, kp=-1) {
   
   # Initialize output structure.
+  test <- NULL
+  approach <- NULL
   df <- data.frame(test=character(), approach=character(), diefk=double(), stringsAsFactors=TRUE)
   
   # Obtain test and approaches to compare.
@@ -142,6 +149,9 @@ diefk2 <- function(inputtrace, inputtest, kp=-1) {
 plotAnswerTrace <- function(inputtrace, inputtest) {
   
   # Obtain test and approaches to compare.
+  test <- NULL
+  answer <- NULL
+  approach <- NULL
   results <- subset(inputtrace, test==inputtest)
   
   # Generate Plot

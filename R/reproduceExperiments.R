@@ -51,6 +51,7 @@ experiment1 <- function(traces_file, metrics_file) {
 plotExperiment1Test <- function(allmetrics, q) {
   
   # Plot metrics using spider plot. 
+  test <- NULL
   keeps <- c("invtfft", "invtotaltime", "comp", "throughput", "dieft") 
   
   data <- subset(allmetrics, test==q) 
@@ -159,6 +160,7 @@ experiment2 <- function(traces_file) {
 plotExperiment2Test <- function(diefkDF, q) {
   
   # Plot metrics using spider plot.
+  test <- NULL
   keeps <- c("diefk25", "diefk50", "diefk75", "diefk100")
   
   x <- subset(diefkDF, test==q)
