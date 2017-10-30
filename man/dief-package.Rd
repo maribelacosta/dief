@@ -20,13 +20,14 @@ License: \tab CC BY 4.0\cr
 }
 
 \examples{
-	# Answer traces: three approaches "Selective", "Not Adaptive", "Random" are compared when executing the test "Q9.sparql"
+	# Answer traces: three approaches "Selective", "Not Adaptive", "Random" 
+	# are compared when executing the test "Q9.sparql"
 	traces <- read.csv("data/example.csv")
 	
 	# Plot answer traces for test "Q9.sparql"
 	plotAnswerTrace(traces, "Q9.sparql")
 	
-	# Compute dief@t when t is the time where the fastest approach produced the last answer.
+	# Compute dief@t with t the time where the fastest approach produced the last answer.
 	dieft(traces, "Q9.sparql")
 	
 	# Compute dief@t after 7.5 unit times (seconds) of execution. 
