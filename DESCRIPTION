@@ -1,12 +1,12 @@
 Package: dief
 Type: Package
-Title: Library for computing diefficiency metrics
+Title: Library for Computing Diefficiency Metrics
 Version: 1.1
 Date: 2017-10-30
 Author: Maribel Acosta
 Maintainer: Maribel Acosta <maribel.acosta@kit.edu>
-Description: Library to compute the metrics dief@t and dief@k from answer traces of incremental approaches.   
+Description: Library to compute the diefficiency (or continuous efficiency) metrics dief@t and dief@k from answer traces of incremental approaches.   
 License: MIT + file LICENSE
-Imports: flux, fmsb, ggplot2, plyr
+Imports: flux, fmsb, ggplot2, plyr, graphics, utils
 LazyData: true
 RoxygenNote: 6.0.1

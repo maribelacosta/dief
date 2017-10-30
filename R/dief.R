@@ -14,6 +14,7 @@ dieft <- function(inputtrace, inputtest, t=-1) {
   # Initialize output structure.
   test <- NULL
   approach <- NULL
+  time <- NULL
   df <- data.frame(test=character(), approach=character(), dieft=double(), stringsAsFactors=TRUE)
   
   # Obtain test and approaches to compare.
@@ -152,6 +153,7 @@ plotAnswerTrace <- function(inputtrace, inputtest) {
   test <- NULL
   answer <- NULL
   approach <- NULL
+  time <- NULL
   results <- subset(inputtrace, test==inputtest)
   
   # Generate Plot

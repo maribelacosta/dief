@@ -7,6 +7,7 @@
 #' @param metrics_file CSV file with the result of the other metrics. The structure of this file is as follows: "test,approach,tfft,totaltime,comp".
 #' @keywords dieft, diefficiency
 #' @author Maribel Acosta
+#' @import utils
 #' @export experiment1
 #' @seealso experiment2, dieft
 #' 
@@ -45,6 +46,7 @@ experiment1 <- function(traces_file, metrics_file) {
 #' @author Maribel Acosta
 #' @param  allmetrics dataframe with the results of all the metrics in Experiment 1. 
 #' @param  q the id of the selected test to plot. 
+#' @import graphics
 #' @export plotExperiment1Test
 #' @seealso experiment1, plotExperiment1
 #'
@@ -105,6 +107,7 @@ plotExperiment1 <- function(allmetrics) {
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @import plyr
+#' @import utils
 #' @export experiment2
 #' @seealso experiment1, diefk2
 #'
@@ -154,6 +157,7 @@ experiment2 <- function(traces_file) {
 #' @param  q the id of the selected test to plot. 
 #' @import fmsb
 #' @import ggplot2
+#' @import graphics
 #' @export plotExperiment2Test
 #' @seealso experiment2, plotExperiment2
 #'
