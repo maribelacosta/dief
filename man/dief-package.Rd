@@ -13,7 +13,7 @@ Library to compute the metrics dief@t and dief@k from answer traces of increment
 \tabular{ll}{
 Package: \tab dief\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
+Version: \tab 1.1\cr
 Date: \tab 2017-05-18\cr
 License: \tab CC BY 4.0\cr
 }
