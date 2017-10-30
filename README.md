@@ -39,7 +39,7 @@ Check the `dief-app` Shiny app.  
 
 
 ## License 
-This package is licensed under CC BY 4.0.
+This package is licensed under the MIT License.
 
 ## How to Cite
 If you are using the `dief` package to compute dief@t or dief@k, please cite the `dief` package using the citation generated with the R built-in command `citation("dief")` as follows:
