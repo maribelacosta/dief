@@ -54,6 +54,6 @@ citation("dief")
 In addition, if you are reporting dief@t or dief@k, please cite our main publication [1]. 
 
 ## Publications
-[1] Maribel Acosta, Maria-Esther Vidal, York Sure-Vetter. Diefficiency Metrics: Measuring the Continuous Efficiency of Query Processing Approaches. In Proceedings of the International Semantic Web Conference, 2017. Nominated to Best Paper Award at the Resource Track. <doi:10.1007/978-3-319-68204-4_1>
+[1] Maribel Acosta, Maria-Esther Vidal, York Sure-Vetter. Diefficiency Metrics: Measuring the Continuous Efficiency of Query Processing Approaches. In Proceedings of the International Semantic Web Conference, 2017. Nominated to Best Paper Award at the Resource Track. [doi:10.1007/978-3-319-68204-4_1](doi:10.1007/978-3-319-68204-4_1)
 
 [2] Maribel Acosta, Maria-Esther Vidal. Measuring the Performance of Continuous Query Processing Approaches with dief@t and dief@k. In  the International Semantic Web Conference, Posters and Demos, 2017.
