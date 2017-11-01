@@ -9,4 +9,6 @@ Description: An implementation of the metrics dief@t and dief@k to measure the d
 License: MIT + file LICENSE
 Imports: flux, fmsb, ggplot2, plyr, graphics, utils
 LazyData: true
+URL: https://github.com/maribelacosta/dief
+BugReports: https://github.com/maribelacosta/dief/issues
 RoxygenNote: 6.0.1
