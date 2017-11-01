@@ -3,10 +3,10 @@
 \alias{dief}
 \docType{package}
 \title{
-Library for computing the diefficiency of incremental approaches 
+Tools for computing the diefficiency of incremental approaches 
 }
 \description{
-Library to compute the metrics dief@t and dief@k from answer traces of incremental approaches.   
+Tools to compute the metrics dief@t and dief@k from answer traces of incremental approaches.   
 }
 
 \details{
@@ -14,8 +14,8 @@ Library to compute the metrics dief@t and dief@k from answer traces of increment
 Package: \tab dief\cr
 Type: \tab Package\cr
 Version: \tab 1.1\cr
-Date: \tab 2017-05-18\cr
-License: \tab CC BY 4.0\cr
+Date: \tab 2017-10-30\cr
+License: \tab MIT\cr
 }
 }
 
@@ -42,7 +42,7 @@ Maintainer: Maribel Acosta <maribel.acosta@kit.edu>
 
 }
 \references{
-Maribel Acosta, Maria-Esther Vidal, York Sure-Vetter. Diefficiency Metrics: Measuring the Continuous Efficiency of Query Processing Approaches. 
+Acosta, Maribel, Maria-Esther Vidal, and York Sure-Vetter. "Diefficiency metrics: Measuring the continuous efficiency of query processing approaches." In International Semantic Web Conference, pp. 3-19. Springer, Cham, 2017.
 }
 
 \keyword{ package }
