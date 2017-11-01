@@ -1,5 +1,3 @@
-#source('~/diefMetrics.R')
-
 #' experiment1
 #'
 #' This function reproduces the results reported in Experiment 1.
