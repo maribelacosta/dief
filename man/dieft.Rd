@@ -11,7 +11,7 @@ dieft(inputtrace, inputtest, t = -1)
 
 \item{inputtest}{String that specifies the specific test to analyze from the answer trace.}
 
-\item{t}{to compute dieft. By default, the function computes the minimum of the execution time among the approaches in the answer trace.}
+\item{t}{Point in time to compute dieft. By default, the function computes the minimum of the execution time among the approaches in the answer trace.}
 }
 \description{
 This function computes the dief@t metric.

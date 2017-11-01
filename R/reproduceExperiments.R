@@ -1,6 +1,6 @@
 #' experiment1
 #'
-#' This function reproduces the results reported in Experiment 1.
+#' This function reproduces the results reported in "Experiment 1" in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
 #' @param traces_file CSV file with the result of the traces. The structure of this file is as follows: "test,approach,tuple,time".
 #' @param metrics_file CSV file with the result of the other metrics. The structure of this file is as follows: "test,approach,tfft,totaltime,comp".
 #' @keywords dieft, diefficiency
@@ -39,7 +39,7 @@ experiment1 <- function(traces_file, metrics_file) {
 
 #' plotExperiment1Test
 #'
-#' This function plots the results reported in Experiment 1 for a single given test.
+#' This function plots the results reported for a single given test in "Experiment 1" in in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>..
 #' @keywords dieft, diefficiency
 #' @author Maribel Acosta
 #' @param  allmetrics dataframe with the results of all the metrics in Experiment 1. 
@@ -78,7 +78,7 @@ plotExperiment1Test <- function(allmetrics, q) {
 
 #' plotExperiment1
 #'
-#' This function plots the results reported in Experiment 1.
+#' This function plots the results reported in Experiment 1 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
 #' @param  allmetrics dataframe with the result of all the metrics in Experiment 1. 
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
@@ -100,7 +100,7 @@ plotExperiment1 <- function(allmetrics) {
 
 #' experiment2
 #'
-#' This function reproduces the results reported in Experiment 2.
+#' This function reproduces the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
 #' @param traces_file CSV file with the result of the traces. The structure of this file is as follows: "test,approach,tuple,time".
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
@@ -148,7 +148,7 @@ experiment2 <- function(traces_file) {
 
 #' plotExperiment2Test
 #'
-#' This function plots the results reported in Experiment 2 for a single given test.
+#' This function plots the results reported for a single given test in "Experiment 2" in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>..
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @param  diefkDF dataframe resulting from Experiment 2.
@@ -187,7 +187,7 @@ plotExperiment2Test <- function(diefkDF, q) {
 
 #' plotExperiment2
 #'
-#' This function plots the results reported in Experiment 2.
+#' This function plots the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @param  diefkDF dataframe with the results of Experiment 2. 

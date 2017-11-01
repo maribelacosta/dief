@@ -11,7 +11,7 @@ diefk(inputtrace, inputtest, k = -1)
 
 \item{inputtest}{String that specifies the specific test to analyze from the answer trace.}
 
-\item{k}{to compute diefk. By default, the function computes the minimum of the total number of answers produced by the approaches.}
+\item{k}{Number of answers to compute diefk. By default, the function computes the minimum of the total number of answers produced by the approaches.}
 }
 \description{
 This function computes the dief@k metric at a given k (number of answers).

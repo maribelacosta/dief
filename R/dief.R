@@ -3,7 +3,7 @@
 #' This function computes the dief@t metric.
 #' @param inputtrace Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
 #' @param inputtest String that specifies the specific test to analyze from the answer trace.
-#' @param t to compute dieft. By default, the function computes the minimum of the execution time among the approaches in the answer trace.
+#' @param t Point in time to compute dieft. By default, the function computes the minimum of the execution time among the approaches in the answer trace.
 #' @keywords dieft, diefficiency
 #' @author Maribel Acosta
 #' @import flux
@@ -54,7 +54,7 @@ dieft <- function(inputtrace, inputtest, t=-1) {
 #' This function computes the dief@k metric at a given k (number of answers).
 #' @param inputtrace Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
 #' @param inputtest String that specifies the specific test to analyze from the answer trace.
-#' @param k to compute diefk. By default, the function computes the minimum of the total number of answers produced by the approaches.
+#' @param k Number of answers to compute diefk. By default, the function computes the minimum of the total number of answers produced by the approaches.
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @import flux
@@ -101,7 +101,7 @@ diefk <- function(inputtrace, inputtest, k=-1) {
 #' This function computes the dief@k metric at a given kp (percentage of answers).
 #' @param inputtrace Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
 #' @param inputtest String that specifies the specific test to analyze from the answer trace.
-#' @param kp to compute diefk. By default and when kp=1.0, this function behaves the same as diefk. It computes the kp portion of of minimum of of number of answers  produced by the approaches.
+#' @param kp Portion of answers to compute diefk (between 0.0 and 1.0). By default and when kp=1.0, this function behaves the same as diefk. It computes the kp portion of of minimum of of number of answers  produced by the approaches.
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @export diefk2

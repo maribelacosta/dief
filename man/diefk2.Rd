@@ -11,7 +11,7 @@ diefk2(inputtrace, inputtest, kp = -1)
 
 \item{inputtest}{String that specifies the specific test to analyze from the answer trace.}
 
-\item{kp}{to compute diefk. By default and when kp=1.0, this function behaves the same as diefk. It computes the kp portion of of minimum of of number of answers  produced by the approaches.}
+\item{kp}{Portion of answers to compute diefk (between 0.0 and 1.0). By default and when kp=1.0, this function behaves the same as diefk. It computes the kp portion of of minimum of of number of answers  produced by the approaches.}
 }
 \description{
 This function computes the dief@k metric at a given kp (percentage of answers).

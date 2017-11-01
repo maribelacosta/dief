@@ -17,7 +17,7 @@ The variables are as follows:
 }
 \details{
 \itemize{
- \item query: id of the query executed. Example: 'Q9.sparql'.
+ \item test: id of the test (in this case a SPARQL query) executed. Example: 'Q9.sparql'.
  \item approach: name of the approach (or engine) used to execute the query.
  \item tuple: the value i indicates that this row corresponds to the ith answer produced by approach when executing query.
  \item time: elapsed time (in seconds) since approach started the execution of query until the answer i is produced.
