@@ -10,7 +10,7 @@ plotExperiment1(allmetrics)
 \item{allmetrics}{dataframe with the result of all the metrics in Experiment 1.}
 }
 \description{
-This function plots the results reported in Experiment 1.
+This function plots the results reported in Experiment 1 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
 }
 \seealso{
 experiment1, diefk2

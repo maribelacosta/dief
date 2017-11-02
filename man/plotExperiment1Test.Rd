@@ -12,7 +12,7 @@ plotExperiment1Test(allmetrics, q)
 \item{q}{the id of the selected test to plot.}
 }
 \description{
-This function plots the results reported in Experiment 1 for a single given test.
+This function plots the results reported for a single given test in "Experiment 1" in in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>..
 }
 \seealso{
 experiment1, plotExperiment1

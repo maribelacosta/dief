@@ -10,7 +10,7 @@ plotExperiment2(diefkDF)
 \item{diefkDF}{dataframe with the results of Experiment 2.}
 }
 \description{
-This function plots the results reported in Experiment 2.
+This function plots the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
 }
 \seealso{
 experiment2, diefk2

@@ -10,7 +10,7 @@ experiment2(traces_file)
 \item{traces_file}{CSV file with the result of the traces. The structure of this file is as follows: "test,approach,tuple,time".}
 }
 \description{
-This function reproduces the results reported in Experiment 2.
+This function reproduces the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
 }
 \seealso{
 experiment1, diefk2
