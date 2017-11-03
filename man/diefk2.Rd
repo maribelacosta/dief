@@ -2,19 +2,24 @@
 % Please edit documentation in R/dief.R
 \name{diefk2}
 \alias{diefk2}
-\title{diefk2}
+\title{Compute dief@k at a portion of the answer}
 \usage{
 diefk2(inputtrace, inputtest, kp = -1)
 }
 \arguments{
-\item{inputtrace}{Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.}
+\item{inputtrace}{dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.}
 
-\item{inputtest}{String that specifies the specific test to analyze from the answer trace.}
+\item{inputtest}{string that specifies the specific test to analyze from the answer trace.}
 
-\item{kp}{Portion of answers to compute diefk (between 0.0 and 1.0). By default and when kp=1.0, this function behaves the same as diefk. It computes the kp portion of of minimum of of number of answers  produced by the approaches.}
+\item{kp}{portion of answers to compute diefk (between 0.0 and 1.0). By default and when kp=1.0, this function behaves the same as diefk. It computes the kp portion of of minimum of of number of answers  produced by the approaches.}
 }
 \description{
-This function computes the dief@k metric at a given kp (percentage of answers).
+This function computes the dief@k metric at a given kp (portion of answers).
+}
+\examples{
+# Compute dief@k when the approaches produced 25\% of the answers w.r.t. 
+# the approach that produced the least answers.
+diefk2(traces, "Q9.sparql", 0.25)
 }
 \seealso{
 dieft, diefk, plotAnswerTrace

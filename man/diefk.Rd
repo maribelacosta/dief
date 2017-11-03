@@ -2,19 +2,26 @@
 % Please edit documentation in R/dief.R
 \name{diefk}
 \alias{diefk}
-\title{diefk}
+\title{Compute metric dief@k}
 \usage{
 diefk(inputtrace, inputtest, k = -1)
 }
 \arguments{
-\item{inputtrace}{Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.}
+\item{inputtrace}{dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.}
 
-\item{inputtest}{String that specifies the specific test to analyze from the answer trace.}
+\item{inputtest}{string that specifies the specific test to analyze from the answer trace.}
 
-\item{k}{Number of answers to compute diefk. By default, the function computes the minimum of the total number of answers produced by the approaches.}
+\item{k}{number of answers to compute diefk. By default, the function computes the minimum of the total number of answers produced by the approaches.}
 }
 \description{
 This function computes the dief@k metric at a given k (number of answers).
+}
+\examples{
+# Compute dief@k when k is the number of answers produced 
+# by the approach theat generated the least answers. 
+diefk(traces, "Q9.sparql") 
+# Compute dief@k while producing the first k=1000 answers. 
+diefk(traces, "Q9.sparql", 1000)
 }
 \seealso{
 dieft, diefk2, plotAnswerTrace

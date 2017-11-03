@@ -2,7 +2,7 @@
 % Please edit documentation in R/reproduceExperiments.R
 \name{plotExperiment1}
 \alias{plotExperiment1}
-\title{plotExperiment1}
+\title{Generate radar plots that compare dief@t with other benchmark metrics in all tests as in <doi:10.1007/978-3-319-68204-4_1>}
 \usage{
 plotExperiment1(allmetrics)
 }
@@ -10,10 +10,13 @@ plotExperiment1(allmetrics)
 \item{allmetrics}{dataframe with the result of all the metrics in Experiment 1.}
 }
 \description{
-This function plots the results reported in Experiment 1 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
+This function plots the results reported in Experiment 1 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+Experiment 1 compares the performance of querying approaches when using metrics defined in the literature (total execution time, time for the first tuple, throughput, and completeness) and the metric dieft@t.
 }
 \seealso{
 experiment1, diefk2
+results1 <- experiment1(traces, metrics)
+plotExperiment1(results1)
 }
 \author{
 Maribel Acosta

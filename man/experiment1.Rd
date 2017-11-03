@@ -2,17 +2,24 @@
 % Please edit documentation in R/reproduceExperiments.R
 \name{experiment1}
 \alias{experiment1}
-\title{experiment1}
+\title{Compares dief@t with other benchmark metrics as in <doi:10.1007/978-3-319-68204-4_1>}
 \usage{
-experiment1(traces_file, metrics_file)
+experiment1(traces, metrics)
 }
 \arguments{
-\item{traces_file}{CSV file with the result of the traces. The structure of this file is as follows: "test,approach,tuple,time".}
+\item{traces}{dataframe with the result of the traces. The structure of this dataframe is as follows: "test,approach,tuple,time".}
 
-\item{metrics_file}{CSV file with the result of the other metrics. The structure of this file is as follows: "test,approach,tfft,totaltime,comp".}
+\item{metrics}{dataframe with the result of the other metrics. The structure of this dataframe is as follows: "test,approach,tfft,totaltime,comp".}
 }
 \description{
-This function reproduces the results reported in "Experiment 1" in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
+This function repeats the results reported in "Experiment 1" in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+Experiment 1 compares the performance of querying approaches when using metrics defined in the literature (total execution time, time for the first tuple, throughput, and completeness) and the metric dieft@t.
+}
+\examples{
+# To fully reproduce the experiments download the full files and load them using read.csv:
+# traces is available at <https://figshare.com/files/9625852>
+# metrics is available at <https://figshare.com/files/9660316>
+results1 <- experiment1(traces, metrics)
 }
 \seealso{
 experiment2, dieft

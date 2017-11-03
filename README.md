@@ -1,5 +1,6 @@
 # dief
 [![Build Status](https://travis-ci.org/maribelacosta/dief.svg?branch=master)](https://travis-ci.org/maribelacosta/dief)
+[![CRAN Status](http://www.r-pkg.org/badges/version/dief)](http://cran.r-project.org/package=dief)
 [![DOI](https://zenodo.org/badge/91789211.svg)](https://zenodo.org/badge/latestdoi/91789211)
 
 
@@ -28,7 +29,7 @@ plotAnswerTrace(traces, "Q9.sparql")
 # Compute dief@t when t is the time where the fastest approach produced the last answer.
 dieft(traces, "Q9.sparql")
 	
-# Compute dief@t after 7.5 unit times (seconds) of execution. 
+# Compute dief@t after 7.5 time units (seconds) of execution. 
 dieft(traces, "Q9.sparql", 7.5)
 ```
 

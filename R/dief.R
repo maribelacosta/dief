@@ -1,14 +1,19 @@
-#' dieft
+#' Compute metric dief@t 
 #'
-#' This function computes the dief@t metric.
-#' @param inputtrace Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
-#' @param inputtest String that specifies the specific test to analyze from the answer trace.
-#' @param t Point in time to compute dieft. By default, the function computes the minimum of the execution time among the approaches in the answer trace.
+#' This function computes the dief@t metric at a point in time t.
+#' @param inputtrace dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
+#' @param inputtest string that specifies the specific test to analyze from the answer trace.
+#' @param t point in time to compute dieft. By default, the function computes the minimum of the execution time among the approaches in the answer trace.
 #' @keywords dieft, diefficiency
 #' @author Maribel Acosta
 #' @import flux
 #' @export dieft
 #' @seealso diefk, diefk2, plotAnswerTrace
+#' @examples 
+#' # Compute dief@t when t is the time where the fastest approach produced the last answer.
+#' dieft(traces, "Q9.sparql")
+#' # Compute dief@t after 7.5 time units (seconds) of execution. 
+#' dieft(traces, "Q9.sparql", 7.5) 
 dieft <- function(inputtrace, inputtest, t=-1) {
   
   # Initialize output structure.
@@ -49,17 +54,23 @@ dieft <- function(inputtrace, inputtest, t=-1) {
   
 }
 
-#' diefk
+#' Compute metric dief@k
 #'
 #' This function computes the dief@k metric at a given k (number of answers).
-#' @param inputtrace Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
-#' @param inputtest String that specifies the specific test to analyze from the answer trace.
-#' @param k Number of answers to compute diefk. By default, the function computes the minimum of the total number of answers produced by the approaches.
+#' @param inputtrace dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
+#' @param inputtest string that specifies the specific test to analyze from the answer trace.
+#' @param k number of answers to compute diefk. By default, the function computes the minimum of the total number of answers produced by the approaches.
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @import flux
 #' @export diefk
 #' @seealso dieft, diefk2, plotAnswerTrace
+#' @examples
+#' # Compute dief@k when k is the number of answers produced 
+#' # by the approach theat generated the least answers. 
+#' diefk(traces, "Q9.sparql") 
+#' # Compute dief@k while producing the first k=1000 answers. 
+#' diefk(traces, "Q9.sparql", 1000)
 diefk <- function(inputtrace, inputtest, k=-1) {
   
   # Initialize output structure.
@@ -96,17 +107,20 @@ diefk <- function(inputtrace, inputtest, k=-1) {
   
 }
 
-#' diefk2
+#' Compute dief@k at a portion of the answer
 #'
-#' This function computes the dief@k metric at a given kp (percentage of answers).
-#' @param inputtrace Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
-#' @param inputtest String that specifies the specific test to analyze from the answer trace.
-#' @param kp Portion of answers to compute diefk (between 0.0 and 1.0). By default and when kp=1.0, this function behaves the same as diefk. It computes the kp portion of of minimum of of number of answers  produced by the approaches.
+#' This function computes the dief@k metric at a given kp (portion of answers).
+#' @param inputtrace dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
+#' @param inputtest string that specifies the specific test to analyze from the answer trace.
+#' @param kp portion of answers to compute diefk (between 0.0 and 1.0). By default and when kp=1.0, this function behaves the same as diefk. It computes the kp portion of of minimum of of number of answers  produced by the approaches.
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @export diefk2
 #' @seealso dieft, diefk, plotAnswerTrace
-#' 
+#' @examples 
+#' # Compute dief@k when the approaches produced 25% of the answers w.r.t. 
+#' # the approach that produced the least answers.
+#' diefk2(traces, "Q9.sparql", 0.25)
 diefk2 <- function(inputtrace, inputtest, kp=-1) {
   
   # Initialize output structure.
@@ -136,17 +150,18 @@ diefk2 <- function(inputtrace, inputtest, kp=-1) {
   
 }
 
-#' plotAnswerTrace
+#' Plot the answer trace of approaches
 #'
-#' This function plots the answer trace of a given test.
-#' @param inputtrace Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
-#' @param inputtest String that specifies the specific test to analyze from the answer trace.
+#' This function plots the answer trace of the approaches when executing a given test.
+#' @param inputtrace dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
+#' @param inputtest string that specifies the specific test to analyze from the answer trace.
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @import ggplot2
 #' @export plotAnswerTrace
 #' @seealso diefk, dieft
-#' 
+#' @examples  
+#' plotAnswerTrace(traces, "Q9.sparql")
 plotAnswerTrace <- function(inputtrace, inputtest) {
   
   # Obtain test and approaches to compare.

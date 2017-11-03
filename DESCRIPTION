@@ -5,7 +5,7 @@ Version: 1.1
 Date: 2017-10-30
 Author: Maribel Acosta
 Maintainer: Maribel Acosta <maribel.acosta@kit.edu>
-Description: An implementation of the metrics dief@t and dief@k to measure the diefficiency (or continuous efficiency) of incremental approaches, see Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>. The metrics dief@t and dief@k allow for measuring the diefficiency during an elapsed time period t or while k answers are produced, respectively. dief@t and dief@k rely on the computation of the area under the curve of answer traces, and thus capturing the answer rate concentration over a time interval.    
+Description: An implementation of the metrics dief@t and dief@k to measure the diefficiency (or continuous efficiency) of incremental approaches, see Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>. The metrics dief@t and dief@k allow for measuring the diefficiency during an elapsed time period t or while k answers are produced, respectively. dief@t and dief@k rely on the computation of the area under the curve of answer traces, and thus capturing the answer rate concentration over a time interval.    
 License: MIT + file LICENSE
 Imports: flux, fmsb, ggplot2, plyr, graphics, utils
 LazyData: true

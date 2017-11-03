@@ -2,17 +2,22 @@
 % Please edit documentation in R/reproduceExperiments.R
 \name{plotExperiment1Test}
 \alias{plotExperiment1Test}
-\title{plotExperiment1Test}
+\title{Generate radar plots that compare dief@t with other benchmark metrics in a specific test as in <doi:10.1007/978-3-319-68204-4_1>}
 \usage{
 plotExperiment1Test(allmetrics, q)
 }
 \arguments{
 \item{allmetrics}{dataframe with the results of all the metrics in Experiment 1.}
 
-\item{q}{the id of the selected test to plot.}
+\item{q}{id of the selected test to plot.}
 }
 \description{
-This function plots the results reported for a single given test in "Experiment 1" in in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>..
+This function plots the results reported for a single given test in "Experiment 1" in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+Experiment 1 compares the performance of querying approaches when using metrics defined in the literature (total execution time, time for the first tuple, throughput, and completeness) and the metric dieft@t.
+}
+\examples{
+results1 <- experiment1(traces, metrics)
+plotExperiment1Test(results1, "Q9.sparql")
 }
 \seealso{
 experiment1, plotExperiment1

@@ -1,19 +1,20 @@
-#' experiment1
+#' Compares dief@t with other benchmark metrics as in <doi:10.1007/978-3-319-68204-4_1>
 #'
-#' This function reproduces the results reported in "Experiment 1" in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
-#' @param traces_file CSV file with the result of the traces. The structure of this file is as follows: "test,approach,tuple,time".
-#' @param metrics_file CSV file with the result of the other metrics. The structure of this file is as follows: "test,approach,tfft,totaltime,comp".
+#' This function repeats the results reported in "Experiment 1" in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+#' Experiment 1 compares the performance of querying approaches when using metrics defined in the literature (total execution time, time for the first tuple, throughput, and completeness) and the metric dieft@t.
+#' @param traces dataframe with the result of the traces. The structure of this dataframe is as follows: "test,approach,tuple,time".
+#' @param metrics dataframe with the result of the other metrics. The structure of this dataframe is as follows: "test,approach,tfft,totaltime,comp".
 #' @keywords dieft, diefficiency
 #' @author Maribel Acosta
 #' @import utils
 #' @export experiment1
 #' @seealso experiment2, dieft
-#' 
-experiment1 <- function(traces_file, metrics_file) {
-  
-  # Input data: Outcome of test execution.
-  traces <- read.csv(traces_file)
-  metrics <- read.csv(metrics_file) 
+#' @examples 
+#' # To fully reproduce the experiments download the full files and load them using read.csv:
+#' # traces is available at <https://figshare.com/files/9625852>
+#' # metrics is available at <https://figshare.com/files/9660316>
+#' results1 <- experiment1(traces, metrics)
+experiment1 <- function(traces, metrics) {
   
   # Compute further metrics: throughput, inverse of execution time, inverse of time for the first tuple.
   metrics$throughput <- with(metrics, metrics$comp/metrics$totaltime)
@@ -37,17 +38,20 @@ experiment1 <- function(traces_file, metrics_file) {
   return(allmetrics)
 }
 
-#' plotExperiment1Test
+#' Generate radar plots that compare dief@t with other benchmark metrics in a specific test as in <doi:10.1007/978-3-319-68204-4_1>
 #'
-#' This function plots the results reported for a single given test in "Experiment 1" in in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>..
+#' This function plots the results reported for a single given test in "Experiment 1" in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+#' Experiment 1 compares the performance of querying approaches when using metrics defined in the literature (total execution time, time for the first tuple, throughput, and completeness) and the metric dieft@t.
 #' @keywords dieft, diefficiency
 #' @author Maribel Acosta
 #' @param  allmetrics dataframe with the results of all the metrics in Experiment 1. 
-#' @param  q the id of the selected test to plot. 
+#' @param  q id of the selected test to plot. 
 #' @import graphics
 #' @export plotExperiment1Test
 #' @seealso experiment1, plotExperiment1
-#'
+#' @examples 
+#' results1 <- experiment1(traces, metrics)
+#' plotExperiment1Test(results1, "Q9.sparql")
 plotExperiment1Test <- function(allmetrics, q) {
   
   # Plot metrics using spider plot. 
@@ -76,9 +80,10 @@ plotExperiment1Test <- function(allmetrics, q) {
   
 }
 
-#' plotExperiment1
+#' Generate radar plots that compare dief@t with other benchmark metrics in all tests as in <doi:10.1007/978-3-319-68204-4_1>
 #'
-#' This function plots the results reported in Experiment 1 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
+#' This function plots the results reported in Experiment 1 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+#' Experiment 1 compares the performance of querying approaches when using metrics defined in the literature (total execution time, time for the first tuple, throughput, and completeness) and the metric dieft@t.
 #' @param  allmetrics dataframe with the result of all the metrics in Experiment 1. 
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
@@ -86,7 +91,8 @@ plotExperiment1Test <- function(allmetrics, q) {
 #' @import ggplot2
 #' @export plotExperiment1
 #' @seealso experiment1, diefk2
-#'
+#' results1 <- experiment1(traces, metrics)
+#' plotExperiment1(results1)
 plotExperiment1 <- function(allmetrics) {
   
   # Obtain queries.
@@ -98,21 +104,22 @@ plotExperiment1 <- function(allmetrics) {
   }
 }  
 
-#' experiment2
+#' Compares dief@k at different answer portions as in <doi:10.1007/978-3-319-68204-4_1>
 #'
-#' This function reproduces the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
-#' @param traces_file CSV file with the result of the traces. The structure of this file is as follows: "test,approach,tuple,time".
+#' This function repeats the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+#' "Experiment 2" measures the continuous efficiency of approaches when producing the first 25%, 50%, 75%, and 100% of the answers. 
+#' @param traces dataframe with the result of the traces. The structure of this dataframe is as follows: "test,approach,tuple,time".
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @import plyr
 #' @import utils
 #' @export experiment2
 #' @seealso experiment1, diefk2
-#'
-experiment2 <- function(traces_file) {
-  
-  # Input data: Outcome of test execution.
-  traces <- read.csv(traces_file)
+#' @examples 
+#' # To fully reproduce the experiments download the full file and load it using read.csv:
+#' # traces is available at <https://figshare.com/files/9625852>
+#' results2 <- experiment2(traces)
+experiment2 <- function(traces) {
   
   # Obtain queries.
   queries <- unique(traces$test)
@@ -146,19 +153,22 @@ experiment2 <- function(traces_file) {
   
 }
 
-#' plotExperiment2Test
+#' Generate radar plots that compare dief@k at different answer completeness in a specific test as in  <doi:10.1007/978-3-319-68204-4_1>
 #'
-#' This function plots the results reported for a single given test in "Experiment 2" in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>..
+#' This function plots the results reported for a single given test in "Experiment 2" in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+#' "Experiment 2" measures the continuous efficiency of approaches when producing the first 25%, 50%, 75%, and 100% of the answers. 
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @param  diefkDF dataframe resulting from Experiment 2.
-#' @param  q the id of the selected test to plot. 
+#' @param  q id of the selected test to plot. 
 #' @import fmsb
 #' @import ggplot2
 #' @import graphics
 #' @export plotExperiment2Test
 #' @seealso experiment2, plotExperiment2
-#'
+#' @examples 
+#' results2 <- experiment2(traces)
+#' plotExperiment2Test(results2, "Q9.sparql")
 plotExperiment2Test <- function(diefkDF, q) {
   
   # Plot metrics using spider plot.
@@ -185,21 +195,24 @@ plotExperiment2Test <- function(diefkDF, q) {
 
 }
 
-#' plotExperiment2
+#' Generate radar plots that compare dief@k at different answer completeness in all tests as in  <doi:10.1007/978-3-319-68204-4_1>
 #'
-#' This function plots the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
+#' This function plots the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+#' "Experiment 2" measures the continuous efficiency of approaches when producing the first 25%, 50%, 75%, and 100% of the answers. 
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @param  diefkDF dataframe with the results of Experiment 2. 
 #' @export plotExperiment2
 #' @seealso experiment2, diefk2
-#'
+#' @examples 
+#' results2 <- experiment2(traces)
+#' plotExperiment2(results2)
 plotExperiment2 <- function(diefkDF) {
   
   # Obtain queries.
   queries <- unique(diefkDF$test)
   
-  # Plot the metrics for each test in Experiment 12.  
+  # Plot the metrics for each test in Experiment 2.  
   for (q in queries) {
     plotExperiment2Test(diefkDF, q)  
   }

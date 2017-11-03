@@ -2,7 +2,7 @@
 % Please edit documentation in R/reproduceExperiments.R
 \name{plotExperiment2}
 \alias{plotExperiment2}
-\title{plotExperiment2}
+\title{Generate radar plots that compare dief@k at different answer completeness in all tests as in  <doi:10.1007/978-3-319-68204-4_1>}
 \usage{
 plotExperiment2(diefkDF)
 }
@@ -10,7 +10,12 @@ plotExperiment2(diefkDF)
 \item{diefkDF}{dataframe with the results of Experiment 2.}
 }
 \description{
-This function plots the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
+This function plots the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+"Experiment 2" measures the continuous efficiency of approaches when producing the first 25%, 50%, 75%, and 100% of the answers.
+}
+\examples{
+results2 <- experiment2(traces)
+plotExperiment2(results2)
 }
 \seealso{
 experiment2, diefk2

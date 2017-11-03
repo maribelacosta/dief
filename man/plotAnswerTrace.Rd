@@ -2,17 +2,21 @@
 % Please edit documentation in R/dief.R
 \name{plotAnswerTrace}
 \alias{plotAnswerTrace}
-\title{plotAnswerTrace}
+\title{Plot the answer trace of approaches}
 \usage{
 plotAnswerTrace(inputtrace, inputtest)
 }
 \arguments{
-\item{inputtrace}{Dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.}
+\item{inputtrace}{dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.}
 
-\item{inputtest}{String that specifies the specific test to analyze from the answer trace.}
+\item{inputtest}{string that specifies the specific test to analyze from the answer trace.}
 }
 \description{
-This function plots the answer trace of a given test.
+This function plots the answer trace of the approaches when executing a given test.
+}
+\examples{
+ 
+plotAnswerTrace(traces, "Q9.sparql")
 }
 \seealso{
 diefk, dieft

@@ -2,15 +2,21 @@
 % Please edit documentation in R/reproduceExperiments.R
 \name{experiment2}
 \alias{experiment2}
-\title{experiment2}
+\title{Compares dief@k at different answer portions as in <doi:10.1007/978-3-319-68204-4_1>}
 \usage{
-experiment2(traces_file)
+experiment2(traces)
 }
 \arguments{
-\item{traces_file}{CSV file with the result of the traces. The structure of this file is as follows: "test,approach,tuple,time".}
+\item{traces}{dataframe with the result of the traces. The structure of this dataframe is as follows: "test,approach,tuple,time".}
 }
 \description{
-This function reproduces the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017). Diefficiency metrics: Measuring the continuous efficiency of query processing approaches. In International Semantic Web Conference (pp. 3-19). Springer, Cham. <doi:10.1007/978-3-319-68204-4_1>.
+This function repeats the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
+"Experiment 2" measures the continuous efficiency of approaches when producing the first 25%, 50%, 75%, and 100% of the answers.
+}
+\examples{
+# To fully reproduce the experiments download the full file and load it using read.csv:
+# traces is available at <https://figshare.com/files/9625852>
+results2 <- experiment2(traces)
 }
 \seealso{
 experiment1, diefk2
