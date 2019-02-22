@@ -27,7 +27,7 @@ data(traces)
 # Plot answer traces for test "Q9.sparql"
 plotAnswerTrace(traces, "Q9.sparql")
 	
-# Compute dief@t with t the time where the fastest approach produced the last answer.
+# Compute dief@t with t the time where the slowest approach produced the last answer.
 dieft(traces, "Q9.sparql")
 	
 # Compute dief@t after 7.5 time units (seconds) of execution. 
