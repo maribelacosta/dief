@@ -40,7 +40,13 @@ dieft <- function(inputtrace, inputtest, t=-1) {
   for (a in approaches) {
     subtrace <- subset(results, approach==a & time<=t)  
     subtrace <- subtrace[, c("time", "answer") ]
-    com <- data.frame(t, nrow(subtrace))
+    k <- nrow(subtrace)
+    if (nrow(subtrace)==1) {
+      if (subtrace$answer==0) {
+        k <- 0
+      }
+    }
+    com <- data.frame(t, k)
     names(com) <- c("time", "answer")
     subtrace <- rbind(subtrace, com)
     dieft <- 0
