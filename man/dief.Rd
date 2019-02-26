@@ -12,7 +12,7 @@ An implementation of the metrics dief@t and dief@k to measure the diefficiency (
 \tabular{ll}{
 Package: \tab dief\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
+Version: \tab 1.2\cr
 Date: \tab 2017-10-30\cr
 License: \tab MIT\cr
 }
