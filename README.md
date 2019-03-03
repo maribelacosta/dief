@@ -16,6 +16,7 @@ install.packages("devtools")
 # Install the dief package.
 devtools::install_github("maribelacosta/dief")
 ```
+
 ## Examples 
 ```r
 library("dief")
