@@ -12,3 +12,4 @@ LazyData: true
 URL: https://github.com/maribelacosta/dief
 BugReports: https://github.com/maribelacosta/dief/issues
 RoxygenNote: 6.1.1
+Encoding: UTF-8

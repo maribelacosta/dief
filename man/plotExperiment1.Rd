@@ -4,10 +4,12 @@
 \alias{plotExperiment1}
 \title{Generate radar plots that compare dief@t with other benchmark metrics in all tests as in <doi:10.1007/978-3-319-68204-4_1>}
 \usage{
-plotExperiment1(allmetrics)
+plotExperiment1(allmetrics, colors = c("#ECC30B", "#D56062", "#84BCDA"))
 }
 \arguments{
 \item{allmetrics}{dataframe with the result of all the metrics in Experiment 1.}
+
+\item{colors}{(optional) list of colors to use for the different approaches.}
 }
 \description{
 This function plots the results reported in Experiment 1 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
@@ -17,6 +19,7 @@ Experiment 1 compares the performance of querying approaches when using metrics 
 experiment1, diefk2
 results1 <- experiment1(traces, metrics)
 plotExperiment1(results1)
+plotExperiment1(results1, c("#ECC30B","#D56062","#84BCDA"))
 }
 \author{
 Maribel Acosta

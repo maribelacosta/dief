@@ -4,12 +4,15 @@
 \alias{plotAnswerTrace}
 \title{Plot the answer trace of approaches}
 \usage{
-plotAnswerTrace(inputtrace, inputtest)
+plotAnswerTrace(inputtrace, inputtest, colors = c("#ECC30B", "#D56062",
+  "#84BCDA"))
 }
 \arguments{
 \item{inputtrace}{dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.}
 
 \item{inputtest}{string that specifies the specific test to analyze from the answer trace.}
+
+\item{colors}{(optional) list of colors to use for the different approaches.}
 }
 \description{
 This function plots the answer trace of the approaches when executing a given test.
@@ -17,6 +20,7 @@ This function plots the answer trace of the approaches when executing a given te
 \examples{
  
 plotAnswerTrace(traces, "Q9.sparql")
+plotAnswerTrace(traces, "Q9.sparql", c("#ECC30B","#D56062","#84BCDA"))
 }
 \seealso{
 diefk, dieft
