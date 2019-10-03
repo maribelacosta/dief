@@ -4,10 +4,12 @@
 \alias{plotExperiment2}
 \title{Generate radar plots that compare dief@k at different answer completeness in all tests as in  <doi:10.1007/978-3-319-68204-4_1>}
 \usage{
-plotExperiment2(diefkDF)
+plotExperiment2(diefkDF, colors = c("#ECC30B", "#D56062", "#84BCDA"))
 }
 \arguments{
 \item{diefkDF}{dataframe with the results of Experiment 2.}
+
+\item{colors}{(optional) list of colors to use for the different approaches.}
 }
 \description{
 This function plots the results reported in Experiment 2 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
@@ -16,6 +18,7 @@ This function plots the results reported in Experiment 2 in Acosta, M., Vidal, M
 \examples{
 results2 <- experiment2(traces)
 plotExperiment2(results2)
+plotExperiment2(results2, c("#ECC30B","#D56062","#84BCDA"))
 }
 \seealso{
 experiment2, diefk2

@@ -161,6 +161,7 @@ diefk2 <- function(inputtrace, inputtest, kp=-1) {
 #' This function plots the answer trace of the approaches when executing a given test.
 #' @param inputtrace dataframe with the answer trace. Attributes of the dataframe: test, approach, answer, time.
 #' @param inputtest string that specifies the specific test to analyze from the answer trace.
+#' @param colors (optional) list of colors to use for the different approaches.
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @import ggplot2
@@ -168,7 +169,8 @@ diefk2 <- function(inputtrace, inputtest, kp=-1) {
 #' @seealso diefk, dieft
 #' @examples  
 #' plotAnswerTrace(traces, "Q9.sparql")
-plotAnswerTrace <- function(inputtrace, inputtest) {
+#' plotAnswerTrace(traces, "Q9.sparql", c("#ECC30B","#D56062","#84BCDA"))
+plotAnswerTrace <- function(inputtrace, inputtest, colors=c("#ECC30B","#D56062","#84BCDA")) {
   
   # Obtain test and approaches to compare.
   test <- NULL
@@ -193,7 +195,7 @@ plotAnswerTrace <- function(inputtrace, inputtest) {
     panel.grid.minor = element_blank(),
     panel.grid.major.y = element_blank())
   
-  print(resplot)
+  print(resplot + scale_colour_manual(values = colors))
   
 }
 

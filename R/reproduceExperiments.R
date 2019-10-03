@@ -46,19 +46,22 @@ experiment1 <- function(traces, metrics) {
 #' @author Maribel Acosta
 #' @param  allmetrics dataframe with the results of all the metrics in Experiment 1. 
 #' @param  q id of the selected test to plot. 
+#' @param  colors (optional) list of colors to use for the different approaches.
 #' @import graphics
 #' @export plotExperiment1Test
 #' @seealso experiment1, plotExperiment1
 #' @examples 
 #' results1 <- experiment1(traces, metrics)
 #' plotExperiment1Test(results1, "Q9.sparql")
-plotExperiment1Test <- function(allmetrics, q) {
+#' plotExperiment1Test(results1, "Q9.sparql", c("#ECC30B","#D56062","#84BCDA"))
+plotExperiment1Test <- function(allmetrics, q, colors=c("#ECC30B","#D56062","#84BCDA")) {
   
   # Plot metrics using spider plot. 
   test <- NULL
   keeps <- c("invtfft", "invtotaltime", "comp", "throughput", "dieft") 
   
   data <- subset(allmetrics, test==q) 
+  approaches <- c(data["approach"])[[1]]
   data <- data[keeps]
   
   maxs <- data.frame(invtfft=max(data$invtfft), invtotaltime=max(data$invtotaltime), comp=max(data$comp), throughput=max(data$throughput), dieft=max(data$dieft))
@@ -66,7 +69,7 @@ plotExperiment1Test <- function(allmetrics, q) {
   
   data <- rbind(maxs, mins ,data)
   
-  colors_border=c("#ECC30B","#D56062","#84BCDA")
+  colors_border=colors
   colors_in=alpha(colors_border, 0.15)
   
   radarchart( data, 
@@ -76,7 +79,7 @@ plotExperiment1Test <- function(allmetrics, q) {
               title=q,
               vlabels=c("(TFFF)^-1", "(ET)^-1", "Comp", "T", "dief@t"))
   
-  legend(x=0.7, y=1.3, legend = c("NA", "Ran", "Sel"), bty = "n", pch=20 , col=colors_border , text.col = "black", cex=1.3, pt.cex=2.5)  
+  legend(x=-1.5, y=1.3, legend=approaches, bty = "n", pch=20 , col=colors_border , text.col = "black", cex=1.3, pt.cex=2.5)  
   
 }
 
@@ -85,6 +88,7 @@ plotExperiment1Test <- function(allmetrics, q) {
 #' This function plots the results reported in Experiment 1 in Acosta, M., Vidal, M. E., & Sure-Vetter, Y. (2017) <doi:10.1007/978-3-319-68204-4_1>.
 #' Experiment 1 compares the performance of querying approaches when using metrics defined in the literature (total execution time, time for the first tuple, throughput, and completeness) and the metric dieft@t.
 #' @param  allmetrics dataframe with the result of all the metrics in Experiment 1. 
+#' @param  colors (optional) list of colors to use for the different approaches.
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @import fmsb
@@ -93,14 +97,15 @@ plotExperiment1Test <- function(allmetrics, q) {
 #' @seealso experiment1, diefk2
 #' results1 <- experiment1(traces, metrics)
 #' plotExperiment1(results1)
-plotExperiment1 <- function(allmetrics) {
+#' plotExperiment1(results1, c("#ECC30B","#D56062","#84BCDA"))
+plotExperiment1 <- function(allmetrics, colors=c("#ECC30B","#D56062","#84BCDA")) {
   
   # Obtain queries.
   queries <- unique(allmetrics$test)
   
   # Plot the metrics for each test in Experiment 1.  
   for (q in queries) {
-    plotExperiment1Test(allmetrics, q)  
+    plotExperiment1Test(allmetrics, q, colors)  
   }
 }  
 
@@ -161,6 +166,7 @@ experiment2 <- function(traces) {
 #' @author Maribel Acosta
 #' @param  diefkDF dataframe resulting from Experiment 2.
 #' @param  q id of the selected test to plot. 
+#' @param  colors (optional) list of colors to use for the different approaches.
 #' @import fmsb
 #' @import ggplot2
 #' @import graphics
@@ -169,10 +175,12 @@ experiment2 <- function(traces) {
 #' @examples 
 #' results2 <- experiment2(traces)
 #' plotExperiment2Test(results2, "Q9.sparql")
-plotExperiment2Test <- function(diefkDF, q) {
+#' plotExperiment2Test(results2, "Q9.sparql", c("#ECC30B","#D56062","#84BCDA"))
+plotExperiment2Test <- function(diefkDF, q, colors=c("#ECC30B","#D56062","#84BCDA")) {
   
   # Plot metrics using spider plot.
   test <- NULL
+  approaches <- unique(diefkDF["approach"])[[1]]
   keeps <- c("diefk25", "diefk50", "diefk75", "diefk100")
   
   x <- subset(diefkDF, test==q)
@@ -183,7 +191,7 @@ plotExperiment2Test <- function(diefkDF, q) {
   
   data <- rbind(mins, maxs, x)
   
-  colors_border=c("#ECC30B","#D56062","#84BCDA")
+  colors_border=colors
   colors_in=alpha(colors_border, 0.15)
   radarchart( data, 
               pcol=colors_border , pfcol=colors_in, plwd=4 , plty=1,
@@ -191,7 +199,7 @@ plotExperiment2Test <- function(diefkDF, q) {
               vlcex=1.5,
               title=q,
               vlabels=c("k=25%", "k=50%", "k=75%", "k=100%"))
-  legend(x=0.7, y=1.3, legend = c("NA", "Ran", "Sel"), bty = "n", pch=20 , col=colors_border , text.col = "black", cex=1.3, pt.cex=2.5)
+  legend(x=-1.5, y=1.3, legend=approaches, bty = "n", pch=20 , col=colors_border , text.col = "black", cex=1.3, pt.cex=2.5)
 
 }
 
@@ -202,19 +210,21 @@ plotExperiment2Test <- function(diefkDF, q) {
 #' @keywords diefk, diefficiency
 #' @author Maribel Acosta
 #' @param  diefkDF dataframe with the results of Experiment 2. 
+#' @param  colors (optional) list of colors to use for the different approaches.
 #' @export plotExperiment2
 #' @seealso experiment2, diefk2
 #' @examples 
 #' results2 <- experiment2(traces)
 #' plotExperiment2(results2)
-plotExperiment2 <- function(diefkDF) {
+#' plotExperiment2(results2, c("#ECC30B","#D56062","#84BCDA"))
+plotExperiment2 <- function(diefkDF, colors=c("#ECC30B","#D56062","#84BCDA")) {
   
   # Obtain queries.
   queries <- unique(diefkDF$test)
   
   # Plot the metrics for each test in Experiment 2.  
   for (q in queries) {
-    plotExperiment2Test(diefkDF, q)  
+    plotExperiment2Test(diefkDF, q, colors)  
   }
 }  
 
