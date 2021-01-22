@@ -14,7 +14,7 @@ To download the development version of the `dief` package directly from GitHub, 
 # If you have not installed the "devtools" package.
 install.packages("devtools")
 # Install the dief package.
-devtools::install_github("maribelacosta/dief")
+devtools::install_github("dachafra/dief")
 ```
 
 ## Examples 
