@@ -189,7 +189,7 @@ plotExperiment2Test <- function(diefkDF, q, colors=c("#ECC30B","#D56062","#84BCD
   maxs <- data.frame(diefk25=max(x$diefk25), diefk50=max(x$diefk50), diefk75=max(x$diefk75), diefk100=max(x$diefk100))
   mins <- data.frame(diefk25=0, diefk50=0,  diefk75=0, diefk100=0)
   
-  data <- rbind(mins, maxs, x)
+  data <- rbind(maxs, mins, x)
   
   colors_border=colors
   colors_in=alpha(colors_border, 0.15)
