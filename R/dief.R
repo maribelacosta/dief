@@ -46,9 +46,6 @@ dieft <- function(inputtrace, inputtest, t=-1) {
         k <- 0
       }
     }
-    com <- data.frame(t, k)
-    names(com) <- c("time", "answer")
-    subtrace <- rbind(subtrace, com)
     dieft <- 0
     if (nrow(subtrace) > 1) {
       dieft <- flux::auc(subtrace$time, subtrace$answer)
