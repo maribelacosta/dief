@@ -14,7 +14,7 @@
 #' dieft(traces, "Q9.sparql")
 #' # Compute dief@t after 7.5 time units (seconds) of execution. 
 #' dieft(traces, "Q9.sparql", 7.5) 
-dieft <- function(inputtrace, inputtest, t=-1) {
+dieft <- function(inputtrace, inputtest, t=-1, to_end=TRUE) {
   
   # Initialize output structure.
   test <- NULL
@@ -46,9 +46,11 @@ dieft <- function(inputtrace, inputtest, t=-1) {
         k <- 0
       }
     }
-    com <- data.frame(t, k)
-    names(com) <- c("time", "answer")
-    subtrace <- rbind(subtrace, com)
+    if (to_end) {
+      com <- data.frame(t, k)
+      names(com) <- c("time", "answer")
+      subtrace <- rbind(subtrace, com)
+    }
     dieft <- 0
     if (nrow(subtrace) > 1) {
       dieft <- flux::auc(subtrace$time, subtrace$answer)
